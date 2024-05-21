@@ -1,108 +1,255 @@
-<!Doctype html>
-<html>
-    <head>
-        <title>Axsil Preagido</title>
-        <style>
-           body {
-               text-align: center;
-           }
-           h1 {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BusBooking.cebu</title>
+    <style>
+        body {
+            font-family:'Roboto',Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+        }
+        .container {
+            
+            width: 80%;
+            margin: 0 auto;
            
-               margin-bottom: 0px;
-               
-               
-           }
-           .container {
-               margin-top: 50px;
-               display:flex;
-               justify-content: center;
-               align-items: center;
-               text-align: left;
-
-             
-           }
-           .image-container {
-               display:inline-block;
-               vertical-align: middle;
-           }
-           .details{
-               display: inline-block
-               vertical-align: middle;
-           }
-
-           p{
-            
-            margin: 0px;
-           }
-            .introduction {
-                margin-right: 200px;
-                margin-top: 20px;
-                margin-left: 300px;
-                text-align: left;
-            }
-           .bullitin{
-              display: flex;
-              justify-content: center;
-              text-align:left;
-              
-           }
-          
-            
-           
-           ul{
-            margin-left:100px;
-            margin-top: 0px;
-             padding: 0;
-           }
-         ul li {
-            list-style-type: disc;
-            margin-bottom: 10px;
-         }
-            
-            
-         
-         
-        </style>
+        }
        
-    </head>
+        header {
+            background-color: white;
+            color: black;
+            padding:0px 0;
+           
+        }
+        header .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        nav{
+            flex-grow:1;
+            text-align:right;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+           
+            
+           
+        }
+        nav ul li {
+         
+            margin: 0 15px;
+            position: relative;
+            
+        }
+        nav ul li a {
+            color: gray;
+            text-decoration: none;
+            margin-right: 30px;
+            margin-left: 20px;
+        }
+        nav ul li a:hover{
+            background-color: #FF6347
+        }
+        nav ul li a:hover {
+            
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            transition: color 0.3s ease; 
+            
+        }
+        nav ul li .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+        nav ul li .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            color: black;
+            white-space: nowrap;
+        }
+        
+            
+        
+        
+        nav ul li:hover .dropdown {
+        display: block; 
+       }
+        .hero {
+            background: url('plaza.jpg') no-repeat center center/cover;
+            height: 500px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            filter:brightness(0.9);
+        }
+        .hero-content h2 {
+            
+            font-size: 4em;
+            margin: 0;
+            color: black;
+            font-family:  sans-serif;
+        }
+        .hero-content p {
+            font-size: 2em;
+            color: black;
+        }
+        .btn {
+            background-color: #FF6347;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+        background-color: #FF8657;
+}
+        .logo h1 { 
+            font-size: 2em;
+            font-family:  sans-serif;
+            align-items: left;
+            margin-right: 650px;
+        }
 
-    <body>
-     
+        .mysection{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 500px;
+            margin: 0 40px ;
+            
+        }
+        .mysection p {
+            margin:0;
+        }
+
+        .mysection img{
+            float:left;
+            width:700px;
+            height: 310px;
+            padding:60px;  
+        }
         
+        .myspan{
+            font-size: 24px;
+            font-weight: 600;
+            color: black;
+            
+        }
+        .myspan2{
+            font-size: 24px;
+            font-weight: 600;
+            color: black;
+            padding-left: 550px;
+           
+            
+        }
+        .secondsection{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left:500px;
+            margin: 0 40px ;
+            
+            
+            
+
+        }
+        .secondsection p {
+            margin:0;
+            text-align: right;
+            
+            
+            
+           
+        }
+        .secondsection img{
+            float: right;
+            width:700px;
+            height: 310px;
+            padding:60px;
+
+        }
+        .third{
+            padding:10px;
+            align-items: center;
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
         <div class="container">
-            <div class="image-container">
-        <img src="2anpgd.jpg"  width="100" height="100" style="margin-right: 30px;" > 
-         </div>
-       <div class="details">
-        <h1 style="font-family: sans-serif;color:rgb(43, 186, 226) ;"> Axsil M. Preagido</h1>
-        <p>Phone Number: 09455511516<br>Gmail:axsiltokik@gmail.com</p>
-    </div>
-</div>
-  
-    
-        <br>
-        <a href="https://web.facebook.com/profile.php?id=100016169506420">My Facebook</a>
-        <hr>
-        <p><b style="color:rgb(43, 186, 226);font-family: Arial, Helvetica, sans-serif;font-size: 20px;">Introduction </b></p>
-        <div class="introduction">
-        <p>Hello! My name is <i>Axsil M. Preagido</i> and I'm thrilled to introduce myself as a dedicated student eager
-             to embark on a journey of learning and growth. As I step into this new chapter of my academic life, 
-             I am filled with excitement and anticipation for the opportunities that lie ahead.</p>
+            <div class="logo">
+                <h1>BUSBOOKING.CEBU</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#packages">Book</a></li>
+                    <li>
+                        <a href="#destinations">Destinations</a>
+                        <div class="dropdown">
+                            <a href="#destination1">Destination 1</a>
+                            <a href="#destination2">Destination 2</a>
+                            <a href="#destination3">Destination 3</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <hr>
-        <p style="color:rgb(43, 186, 226);font-family: Arial, Helvetica, sans-serif;font-size: 20px;">INFORMATION</p>
-        
-        <div class="bullitin">
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h2>Explore Cebu with Us.</h2>
             
-            <ul>
-                <li>Graduated from <abbr title="Passionis't Sister School">PSS</abbr> with honors</li>
-                <li>Received With High Honor</li>
-                <li>Participated in extracurricular activities such as sports, clubs, or community service</li>
-                <li>Attended college preparation courses or workshops</li>
-                <li>Completed internships or job shadowing experiences</li>
-                <li>Volunteered for community projects or organizations</li>
-            </ul>
-            
+            <p>Book your bus tickets now</p>
+            <a href="#packages" class="btn">Book Now</a>
+        </div>
     </div>
-    </body>
+    <section class="third">
+        <h1>Explore place with ease. Your local bus booking solution.</h1>
+    <p>Welcome to our bus booking website, your gateway to hassle-free travel. <br>Explore seamless reservations, convenient routes, and reliable services tailored<br> to your journey needs. Start your adventure with us today</p>
+ 
+    </section>
+    <section class="first" id="first">
+        <div class="mysection">
+            <img src="Oslob.jpg">
+            
+            <p><span class="myspan">Oslob Whale Sharks</span><br><br> Oslob, Cebu is a famous destination for whale shark watching. The whale sharks in Oslob are considered as the living species of the 'largest fish in the world' and can reach up to 15 meters long</p>
+        </div>
+    </section>
+
+
+    <section class="second" id="second">
+        <div class="secondsection">
+           
+            
+            <p><span class="myspan2">Kawasan Falls</span><br><br> Nestled in the heart of Cebu, Kawasan Falls is a pristine natural wonder that captivates visitors with its stunning beauty and serene ambiance. This multi-tiered waterfall, located in the municipality of Badian, is renowned for its crystal-clear turquoise waters, lush green surroundings, and tranquil atmosphere, making it a perfect destination for nature lovers and adventure seekers alike.</p>
+            <img src="kawasan.jpg">
+            
+        </div>
+    </section>
+
+
+</body>
 </html>
