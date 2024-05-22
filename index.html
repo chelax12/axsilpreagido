@@ -6,66 +6,62 @@
     <title>BusBooking.cebu</title>
     <style>
         body {
-            font-family:'Roboto',Arial, sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             line-height: 1.6;
         }
+
         .container {
-            
-            width: 80%;
+            width: 90%;
+            max-width: 1200px;
             margin: 0 auto;
-           
         }
-       
+
         header {
             background-color: white;
             color: black;
-            padding:0px 0;
-           
+            padding: 10px 0;
         }
-        header .container{
+
+        header .container {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
         }
-        nav{
-            flex-grow:1;
-            text-align:right;
+
+        nav {
+            flex-grow: 1;
+            text-align: right;
         }
+
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: center;
-           
-            
-           
+            justify-content: flex-end;
         }
+
         nav ul li {
-         
             margin: 0 15px;
             position: relative;
-            
         }
+
         nav ul li a {
             color: gray;
             text-decoration: none;
-            margin-right: 30px;
-            margin-left: 20px;
+            margin: 0 20px;
         }
-        nav ul li a:hover{
-            background-color: #FF6347
-        }
+
         nav ul li a:hover {
-            
+            background-color: #FF6347;
             -webkit-text-fill-color: transparent;
             -webkit-background-clip: text;
-            transition: color 0.3s ease; 
-            
+            transition: color 0.3s ease;
         }
+
         nav ul li .dropdown {
             display: none;
             position: absolute;
@@ -77,19 +73,18 @@
             overflow: hidden;
             z-index: 1000;
         }
+
         nav ul li .dropdown a {
             display: block;
             padding: 10px 20px;
             color: black;
             white-space: nowrap;
         }
-        
-            
-        
-        
+
         nav ul li:hover .dropdown {
-        display: block; 
-       }
+            display: block;
+        }
+
         .hero {
             background: url('plaza.jpg') no-repeat center center/cover;
             height: 500px;
@@ -98,19 +93,21 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            filter:brightness(0.9);
+            filter: brightness(0.9);
         }
+
         .hero-content h2 {
-            
             font-size: 4em;
             margin: 0;
             color: black;
-            font-family:  sans-serif;
+            font-family: sans-serif;
         }
+
         .hero-content p {
             font-size: 2em;
             color: black;
         }
+
         .btn {
             background-color: #FF6347;
             color: white;
@@ -118,80 +115,134 @@
             text-decoration: none;
             border-radius: 5px;
         }
+
         .btn:hover {
-        background-color: #FF8657;
-}
-        .logo h1 { 
+            background-color: #FF8657;
+        }
+
+        .logo h1 {
             font-size: 2em;
-            font-family:  sans-serif;
-            align-items: left;
-            margin-right: 650px;
-        }
-
-        .mysection{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 500px;
-            margin: 0 40px ;
+            font-family: sans-serif;
+            margin: 0;
             
         }
-        .mysection p {
-            margin:0;
+
+        .mysection,
+        .secondsection {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: center;
+            margin: 40px 0;
         }
 
-        .mysection img{
-            float:left;
-            width:700px;
+        .mysection img,
+        .secondsection img {
+            width: 700px;
             height: 310px;
-            padding:60px;  
+            padding: 20px;
         }
-        
-        .myspan{
+
+        .mysection p{
+         
+            margin: 0;
+            padding: 20px;
+        }
+        .secondsection p{
+            margin: 0;
+            padding: 20px;
+            text-align:right;
+        }
+
+        .myspan,
+        .myspan2 {
             font-size: 24px;
             font-weight: 600;
             color: black;
-            
         }
-        .myspan2{
-            font-size: 24px;
-            font-weight: 600;
-            color: black;
-            padding-left: 550px;
-           
-            
-        }
-        .secondsection{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-left:500px;
-            margin: 0 40px ;
-            
-            
-            
 
-        }
-        .secondsection p {
-            margin:0;
-            text-align: right;
-            
-            
-            
-           
-        }
-        .secondsection img{
-            float: right;
-            width:700px;
-            height: 310px;
-            padding:60px;
-
-        }
-        .third{
-            padding:10px;
-            align-items: center;
+        .third {
+            padding: 20px;
             text-align: center;
+        }
+
+        @media (max-width: 768px) {
             
+            nav ul {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .hero-content h2 {
+                font-size: 2em;
+            }
+
+            .hero-content p {
+                font-size: 1.3em;
+            }
+
+            .btn {
+                padding: 8px 16px;
+            }
+            .container{
+                flex-direction: column;
+            }
+            .mysection,
+            .secondsection {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .mysection p,
+            .secondsection p {
+                order: 1;
+                text-align: center;
+            }
+
+            .mysection img,
+            .secondsection img {
+                order: 2;
+                width: 100%;
+                height: auto;
+            }
+
+            .myspan2 {
+                padding-left: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+           
+            nav ul {
+                flex-direction: row;
+                
+            }
+            .logo{
+              
+                text-align: center;
+            }
+            .container{
+                flex-direction: column;
+            }
+            .hero {
+                height: 300px;
+            }
+
+            .hero-content h2 {
+                font-size: 1.5em;
+            }
+
+            .hero-content p {
+                font-size: 1em;
+            }
+
+            .btn {
+                padding: 6px 12px;
+            }
         }
     </style>
 </head>
@@ -221,35 +272,30 @@
     <div class="hero">
         <div class="hero-content">
             <h2>Explore Cebu with Us.</h2>
-            
             <p>Book your bus tickets now</p>
             <a href="#packages" class="btn">Book Now</a>
         </div>
     </div>
+
     <section class="third">
         <h1>Explore place with ease. Your local bus booking solution.</h1>
-    <p>Welcome to our bus booking website, your gateway to hassle-free travel. <br>Explore seamless reservations, convenient routes, and reliable services tailored<br> to your journey needs. Start your adventure with us today</p>
- 
-    </section>
-    <section class="first" id="first">
-        <div class="mysection">
-            <img src="Oslob.jpg">
-            
-            <p><span class="myspan">Oslob Whale Sharks</span><br><br> Oslob, Cebu is a famous destination for whale shark watching. The whale sharks in Oslob are considered as the living species of the 'largest fish in the world' and can reach up to 15 meters long</p>
-        </div>
+        <p>Welcome to our bus booking website, your gateway to hassle-free travel.<br>Explore seamless reservations, convenient routes, and reliable services tailored<br>to your journey needs. Start your adventure with us today</p>
     </section>
 
+    <section class="first" id="first">
+        <div class="mysection">
+            <img src="Oslob.jpg" alt="Oslob Whale Sharks">
+            <p><span class="myspan">Oslob Whale Sharks</span><br><br>Oslob, Cebu is a famous destination for whale shark watching. The whale sharks in Oslob are considered as the living species of the 'largest fish in the world' and can reach up to 15 meters long.</p>
+        </div>
+    </section>
 
     <section class="second" id="second">
         <div class="secondsection">
-           
-            
-            <p><span class="myspan2">Kawasan Falls</span><br><br> Nestled in the heart of Cebu, Kawasan Falls is a pristine natural wonder that captivates visitors with its stunning beauty and serene ambiance. This multi-tiered waterfall, located in the municipality of Badian, is renowned for its crystal-clear turquoise waters, lush green surroundings, and tranquil atmosphere, making it a perfect destination for nature lovers and adventure seekers alike.</p>
-            <img src="kawasan.jpg">
-            
+            <p><span class="myspan2">Kawasan Falls</span><br><br>Nestled in the heart of Cebu, Kawasan Falls is a pristine natural wonder that captivates visitors with its stunning beauty and serene ambiance. This multi-tiered waterfall, located in the municipality of Badian, is renowned for its crystal-clear turquoise waters, lush green surroundings, and tranquil atmosphere, making it a perfect destination for nature lovers and adventure seekers alike.</p>
+            <img src="kawasan.jpg" alt="Kawasan Falls">
         </div>
     </section>
-
-
 </body>
 </html>
+
+
